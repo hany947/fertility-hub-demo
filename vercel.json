@@ -1,6 +1,16 @@
 {
+  "version": 2,
+  "public": true,
   "cleanUrls": false,
   "rewrites": [
-    { "source": "/validation-key.txt", "destination": "/validation-key.txt" }
+    { "source": "/(.*)", "destination": "/$1" }
+  ],
+  "headers": [
+    {
+      "source": "/validation-key.txt",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain" }
+      ]
+    }
   ]
 }
